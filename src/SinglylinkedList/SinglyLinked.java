@@ -2,16 +2,16 @@ package SinglylinkedList;
 
 public class SinglyLinked {
 	
-	public Node first; //point to head
+	public Node head; //point to head
 	
-public void insertFirst(int data) {//inserts at the beginning
+public void insertFirst(Node head, int data) {//inserts at the beginning
 		
 		Node newNode = new Node(data);
 		if(isEmpty()) {
-			first = newNode;
+			head = newNode;
 		}else {
-			newNode.next = first;
-			first = newNode;
+			newNode.next = head;
+			head = newNode;
 		}
 		
 	}
@@ -26,8 +26,8 @@ public Node deleteFirst(int data) throws Exception{//deletes at the beginning
 		if(isEmpty()) {
 			throw new Exception("Nothing to delete, List is empty");
 		}else {
-			Node tmp = first;
-			first = first.next;
+			Node tmp = head;
+			head = head.next;
 			return tmp;
 		}
 		
@@ -38,9 +38,9 @@ public void insertLast(int data) {//inserts at the last. Need to traverse from f
 	
 	Node newNode = new Node(data);
 	if(isEmpty()) {
-		first = newNode;
+		head = newNode;
 	}else {
-		Node current = first;
+		Node current = head;
 		
 		while(current.next!=null) {
 			current = current.next;			
@@ -53,13 +53,13 @@ public void insertLast(int data) {//inserts at the last. Need to traverse from f
 }
 		
 public boolean isEmpty() {
-			return (first==null);
+			return (head==null);
 }
 
 public void displayList() {
 	
 	System.out.println("Dislaying from first to last**");
-	Node currentNode = first;
+	Node currentNode = head;
 	
 	while(currentNode!=null) {
 		System.out.println(currentNode.data);

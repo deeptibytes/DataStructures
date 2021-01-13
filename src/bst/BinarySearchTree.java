@@ -76,7 +76,7 @@ public class BinarySearchTree {
 			node.right = insertKey(node.right, key);
 		}
 		
-		return node;
+		return node;//this is the root of tree passed in the method not the inserted node!!!
 	}
 	 
 	 public int search(int key) {

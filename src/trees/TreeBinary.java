@@ -73,7 +73,7 @@ public class TreeBinary {
 		}
 	}
 	
-	void printByLevel(Node root, int level) {
+	void printByLevel1(Node root, int level) {
 		
 		if(root == null)  
 			return;
@@ -90,6 +90,7 @@ public class TreeBinary {
 		
 		
 	}
+	
 	
 	
 	
@@ -335,17 +336,20 @@ public class TreeBinary {
          *              
          */
         TreeBinary bst = new TreeBinary();
-        bst.root = new Node(20); 
-        bst.root.left = new Node(10); //45
-        bst.root.right = new Node(30);
+       // bst.root = new Node(20); 
+       // bst.root.left = new Node(10); //45
+        //bst.root.right = new Node(30);
        /* bst.root.left.left = new Node(40);//40
         bst.root.left.right = new Node(47);*/
-        bst.root.right.left = new Node(25);
-        bst.root.right.right = new Node(40);
+        //bst.root.right.left = new Node(25);
+       // bst.root.right.right = new Node(40);
         
         //boolean isBST = bst.isBST(bst.root);
-        boolean isBST = bst.isBSTByInorder(bst.root);
-        System.out.println("isBST "+isBST);
+       // boolean isBST = bst.isBSTByInorder(bst.root);
+        //System.out.println("isBST "+isBST);
+        
+        System.out.println("**** breadthFirstTraversal ");
+         tree.breadthFirstTraversal(tree.root);
         
         
         
