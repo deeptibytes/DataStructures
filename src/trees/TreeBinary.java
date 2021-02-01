@@ -31,21 +31,21 @@ public class TreeBinary {
      *              9
      */
 		
-	void inOrderTraversal(Node root) {
+	void inOrderTraversal(Node root) { //O(N)
 		if(root == null) return ;		
 		inOrderTraversal(root.left);
 		System.out.println(root.data);
 		inOrderTraversal(root.right);	
 	}
 	
-	void preOrderTraversal(Node root) {
+	void preOrderTraversal(Node root) { //O(N)
 		if(root == null) return ;
 		System.out.println(root.data);
 		preOrderTraversal(root.left);
 		preOrderTraversal(root.right);
 	}
 	
-	void postOrderTraversal(Node root) {
+	void postOrderTraversal(Node root) { //O(N)
 		if(root == null) return ;
 		postOrderTraversal(root.left);
 		postOrderTraversal(root.right);
@@ -64,16 +64,16 @@ public class TreeBinary {
          */
 	 
 	
-	void breadthFirstTraversal(Node root) {
+	void breadthFirstTraversal(Node root) { //O(N square) worst case , Best case = nLogn
 		int height = getMaxTreeHeight(root);
-		for(int i = 1; i<= height; i++) {
+		for(int i = 1; i<= height; i++) {///i starts at 1 not 0. Root level will be 1 here. If height is 4, loop will run 4 times starting from 1
 			System.out.println();
 			System.out.print("Nodes at level "+i+"--> ");
 			printByLevel(root, i);
 		}
 	}
 	
-	void printByLevel1(Node root, int level) {
+	void printByLevel1(Node root, int level) {// //O(N) for skewed tree. 
 		
 		if(root == null)  
 			return;
@@ -94,7 +94,7 @@ public class TreeBinary {
 	
 	
 	
-	public int getMaxTreeHeight(Node root) {///same will be maxDepth. Same will be any Node height
+	public int getMaxTreeHeight(Node root) {///  //O(N)  same will be maxDepth. Same will be any Node height
 		
 		 /*         1
          *      2       3
@@ -156,13 +156,13 @@ public class TreeBinary {
 	
 	
  //Perfect --2 nodes. all leaf nodes at the same level. Except leaf node, all will have two children
-   public boolean isPerfectTree(Node root, int level, int maxHeight) {
+   public boolean isPerfectTree(Node root, int level, int maxHeight) {//check what params we are passing here!!
 		
 	   if(root ==null) {
 			return true;
 		}
 	   
-	   
+	   //Level starts with zero!!
 		if(root.left == null && root.right == null) {
 			return (maxHeight == level + 1);//when this is true, means they are leaf nodes and leaf nodes can have null children
 		}
@@ -183,7 +183,7 @@ public class TreeBinary {
    }
    
    //Complete: Heap. grows from left to right. Once level is full then next level starts.  all levels are full except last level
-   public boolean isCompleteTree(Node root, int childIdx, int numOfNodes) {
+   public boolean isCompleteTree(Node root, int childIdx, int numOfNodes) {//check params here
 		
 	   if(root ==null) {
 			return true;
@@ -211,14 +211,14 @@ public class TreeBinary {
 	   if(root == null) {
 		   return true;
 	   }
-	   int leftHeight = getMaxTreeHeight(root.left);
-	   int rightHeight = getMaxTreeHeight(root.right);
+	   int leftHeight = getMaxTreeHeight(root.left); //O(N)
+	   int rightHeight = getMaxTreeHeight(root.right); //O(N)
 	   
 	   if(    (Math.abs(leftHeight - rightHeight)) > 1     ) {
 		   return false;
 	   }
 	   
-	   return isBalanced(root.left) && isBalanced (root.right);
+	   return isBalanced(root.left) && isBalanced (root.right); //
 	   
 
   	}
@@ -253,7 +253,7 @@ public class TreeBinary {
    
    
    
-   int[] createArrayBST(Node root, int[] arr, Index index) {
+   int[] createArrayBST(Node root, int[] arr, Index index) {//create array from Binary Search tree
 	   if(root == null) 
 		   return null;	
 	   

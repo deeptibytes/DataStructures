@@ -73,7 +73,7 @@ public class BinarySearch {
 		
 		int mid = (low + high)/2;
 		
-		if(key == arr[mid]) return key;
+		if(key == arr[mid]) return mid;
 		else if(key  < arr[mid]) return binarySearch(arr, key, low, mid - 1);
 		else return binarySearch(arr, key, mid+1, high);
 		

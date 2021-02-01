@@ -112,6 +112,80 @@ public class SimpleGraph {
 		
 		
 	}
+	
+	
+	public detectCycle(int vertices){
+	
+	boolean[] visitedGlobal = new boolean[adj_list.length];
+	boolean[] visitedLocal = new boolean[adj_list.length];
+	for(int i=0; i<vertices; i++){
+	  if(detectCycle(i), visitedGlobal, visitedLocal)){
+	     return true;
+	  }
+	
+	}
+	
+	return false;
+	
+	
+	
+	}
+	
+	public detectCycle(int vertex, boolean[] visitedGlobal, boolean[] visitedLocal, LinkedList<Integer>[] adj_list){
+	  
+	  //Base case start
+	  if( visitedLocal[vertex]) return true;	  
+	  if( visitedGlobal[vertex]) return false;//means we have already visited this node and checked if any of its children make a cycle. so no need to check again!!
+	  //Base case end
+	  
+	 // Mark the vertex as visited
+	  visitedLocal[vertex] = true; 
+	  visitedGlobal[vertex]= true;;
+	  
+	  //get child
+	  LinkedList<Integer> children = adj_list[vertex];	  
+	  Iterater itr = children.iterator();
+	  while(itr.hasNext(){	  
+	    int child = itr.next;
+	    if(detectCycle(child)){//if none of the child returns true means no cycle and control will go to line 161
+	    //1 >>2, 3, 4
+	    //4 >> 1
+	    //1 will be passed in function then child of 1 will be retrieved that are 2, 3, 4. 
+	    //Now detectCycle(child) will be invoked for 2, 3, 4. Whne it is invoked for 4, one of the base case (if( visitedLocal[vertex])
+	    //will return true. Control will go to parent method detectCycle(LinkedList<Integer>[] adj_list) and output will be received as true menas
+	    //graph has cycle. 
+	      return true;
+	    }
+	  }  
+	    
+	     //If we come out of the while loop. this means either of the two below:
+	     //1. none of the children of the vertex returned true	
+	     //2. vertex does not have any children 
+	     //0>>>1, 2, 3
+	     //1 >> 4
+	     //For this graph, 2 , 3 and 4 does not have any child so while loop wont run for them and they will be set as false in local array.  When 1 is passed, it will   
+	   //not return true so 1 will also set as false in local array. Now all 3 children of 0 didnt return true so 0 will also be set as false. 
+	   // Since it is recursive call, and none of the child return true, all elements 
+	    //will be set as false for local array
+	    visitedLocal[vertex] = false;
+	    
+	    return false;
+	  }  
+	   
+	    
+	  
+	  
+	  }
+	  
+	  
+	  
+	
+	
+	
+	}
+	
+	
+	
 }	
 	
 	

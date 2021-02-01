@@ -22,13 +22,13 @@ public class BucketSort {
 		
 		
 		//Add input array elements into the appropriate buckets(lists)
-		for(int num: arr) {
+		for(int num: arr) {//O(N)
 			int bucketIDx = getHashValue(num);
 			buckets[bucketIDx].add(num);			
 		}
 		
 		//sort each bucket
-		for(int i=0; i < len; i++) { 			
+		for(int i=0; i < len; i++) {			
 			Collections.sort(buckets[i]) ;
 		}
 		
