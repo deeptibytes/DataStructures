@@ -21,7 +21,7 @@ public class QuickSort {
 		      }
 		    }
 		    int temp = array[i + 1];
-		    array[i + 1] = array[high];
+		    array[i + 1] = array[high];//swapping pivot with  i+1 element
 		    array[high] = temp;
 		    return (i + 1);
 		  }

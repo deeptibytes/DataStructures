@@ -27,7 +27,7 @@ public class BubbleSort {
 	  void bubbleSort(int arr[]) 
 	    /*{ 
 	        int n = arr.length; //if length(n)= 5  {6, 3, 5, 2, 9}
-	        for (int i = 0; i < n-1; i++) //will run 5 times. Outer loop must run n times
+	        for (int i = 0; i < n-1; i++) //will run 5 times. Outer loop must run n - 1 times
 	            for (int j = 0; j < n-i-1; j++) //
 	                if (arr[j] < arr[j+1]) //this is for sorting descending order. User > if want ascending order
 	                { 

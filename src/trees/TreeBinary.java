@@ -73,7 +73,7 @@ public class TreeBinary {
 		}
 	}
 	
-	void printByLevel1(Node root, int level) {// //O(N) for skewed tree. 
+	void printByLevel(Node root, int level) {// //O(N) for skewed tree. 
 		
 		if(root == null)  
 			return;

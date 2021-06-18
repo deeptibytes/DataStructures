@@ -110,16 +110,17 @@ public class SimpleGraph {
 			  }
 		}
 		
-		
+		}
 	}
 	
 	
-	public detectCycle(int vertices){
+	/*boolean detectCycle(LinkedList<Integer>[] adj_list){
 	
-	boolean[] visitedGlobal = new boolean[adj_list.length];
-	boolean[] visitedLocal = new boolean[adj_list.length];
+	int vertices = adj_list.length
+	boolean[] visitedGlobal = new boolean[vertices];
+	boolean[] visitedLocal = new boolean[vertices];
 	for(int i=0; i<vertices; i++){
-	  if(detectCycle(i), visitedGlobal, visitedLocal)){
+	  if(detectCycle(i, visitedGlobal, visitedLocal, adj_list)){
 	     return true;
 	  }
 	
@@ -131,7 +132,7 @@ public class SimpleGraph {
 	
 	}
 	
-	public detectCycle(int vertex, boolean[] visitedGlobal, boolean[] visitedLocal, LinkedList<Integer>[] adj_list){
+	public boolean detectCycle(int vertex, boolean[] visitedGlobal, boolean[] visitedLocal, LinkedList<Integer>[] adj_list){
 	  
 	  //Base case start
 	  if( visitedLocal[vertex]) return true;	  
@@ -144,7 +145,7 @@ public class SimpleGraph {
 	  
 	  //get child
 	  LinkedList<Integer> children = adj_list[vertex];	  
-	  Iterater itr = children.iterator();
+	  Iterator<Integer> itr = children.iterator();
 	  while(itr.hasNext(){	  
 	    int child = itr.next;
 	    if(detectCycle(child)){//if none of the child returns true means no cycle and control will go to line 161
@@ -172,22 +173,10 @@ public class SimpleGraph {
 	    return false;
 	  }  
 	   
-	    
+	}    
+	  */
 	  
-	  
-	  }
-	  
-	  
-	  
-	
-	
-	
-	}
-	
-	
-	
-}	
-	
+	 
 	
 	public static void main(String[] args) {
 		SimpleGraph graph = new SimpleGraph(6);
